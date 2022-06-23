@@ -42,7 +42,6 @@ textarea:focus{
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
-
 .btn--save:hover{
   cursor: pointer;
   background-color: darkgray;
@@ -105,4 +104,27 @@ textarea:focus{
 
 .dark-mode h1{
   color: white;
+}
+
+.dark-mode .btn--dm{
+  color: white;
+}
+
+.dark-mode .link--home{
+  color: white;
+}
+
+.btn--dm{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.inp--search{
+  width: 100%;
+}
+
+.link--home{
+  text-decoration: none;
+  color: black;
 }

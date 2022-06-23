@@ -9,6 +9,7 @@ const Search = ({handleSearchNote}) => {
                 onChange={(event) => handleSearchNote(event.target.value)}
                 type="text" 
                 placeholder="Type to search..." 
+                className="inp--search"
             />
         </div>
     );

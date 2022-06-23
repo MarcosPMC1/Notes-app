@@ -67,6 +67,7 @@ function App() {
   return (
     <div className={`${darkMode && 'dark-mode'}`}>
       <div className="container">
+        <small>Criado por: Marcos Cardoso</small>
         <Header handleDarkMode={setDarkMode} />
         <Search handleSearchNote={setSearchText} />
         <NoteList 

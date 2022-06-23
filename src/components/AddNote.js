@@ -1,12 +1,36 @@
-import React from "react"
+import React, {useState} from "react"
 
-const AddNote = () => {
+const AddNote = ({ handleAddNote }) => {
+
+    const [noteText, setNoteText] = useState('');
+
+    const characterLimit = 200;
+
+    const handleChange = (event) => {
+        if(characterLimit - noteText.length >= 0){
+            setNoteText(event.target.value);
+        }
+    }
+
+    const handleSaveClick = () => {
+        if(noteText.trim().length > 0){
+            handleAddNote(noteText);
+            setNoteText('');
+        }
+    }
+
     return(
         <div className="note new">
-            <textarea cols="10" rows="8" placeholder="Digite para adiconar nova nota... "></textarea>
+            <textarea 
+                cols="10" 
+                rows="8" 
+                placeholder="Digite para adiconar nova nota... "
+                value={noteText}
+                onChange={handleChange}
+                ></textarea>
             <div className="note--footer">
-                <small>200 remaing</small>
-                <button className="btn--save">Save</button>
+                <small>{characterLimit - noteText.length} remaing</small>
+                <button className="btn--save" onClick={handleSaveClick}>Save</button>
             </div>
         </div>
     )
